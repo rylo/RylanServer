@@ -1,0 +1,36 @@
+<h1>T3</h1>
+
+<div id='board'>
+	<% @board.grid.each_with_index do |space,index| %>
+		<a href='/game/<%= index %>'><div class='grid-space'><%= space %><%= index %></div>
+	<% end %>
+</div>
+
+<style>
+
+	h1, h2 {
+		color: #fff;
+	}
+	
+	.grid-space {
+		height: 50px;
+		width: 50px;
+		float: left;
+		background: #C4BE90;
+		border: solid 1px #293033;
+	}
+	
+	.grid-space:hover {
+		background-color: #fff;
+	}
+	
+	#board {
+		margin: 0 auto;
+		width: 156px;
+	}
+	
+	body {
+		background: #293033;
+	}
+	
+</style>
