@@ -9,7 +9,6 @@ class RyServer
   def new_game
     game = Storage.save(:game, Game.new('x', HumanPlayer, 'o', EasyComputer, 3, ConsoleUI))
     body = format(game, 'game')
-    p "body: #{body}"
     respond_with(body)
   end
   
@@ -26,7 +25,6 @@ class RyServer
     bound = RyBinding.new(content).get_binding
     template = Template.get_template(template_name)
     result = ERB.new(File.read(template)).result bound    
-    p "result: #{result}"
     return result
   end
   
