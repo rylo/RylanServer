@@ -1,4 +1,5 @@
 class Storage
+
   def self.data
     @data ||= {}
   end
@@ -10,4 +11,9 @@ class Storage
   def self.fetch(key)
     data[key]
   end
+  
+  def self.clear
+    @data = {}
+  end
+
 end

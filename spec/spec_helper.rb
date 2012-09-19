@@ -1,3 +1,7 @@
+require 'rubygems'
+require 'rack'
+require 'rack/test'
+
 require 'ryserver'
 require 'storage'
 require 'template'

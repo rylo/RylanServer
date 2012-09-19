@@ -1,18 +1,46 @@
-<h1>T3</h1>
+<div id='header'>
+	<h1>T3</h1>
+	<div id='navigation'>
+		<a href='/game/new'>New Game</a>
+	</div>
+</div>
+<h1 class='center'><%= @current_player.marker %>'s turn</h1>
+<h1 class='center'><%= @flash if !@flash.nil? %></h1>
 
 <div id='board'>
-	<% @board.grid.each_with_index do |space,index| %>
-		<a href='/game/<%= index %>'><div class='grid-space'><%= space %><%= index %></div>
+	<% @board.grid.each_with_index do |space_content,index| %>
+		<a href='/game/<%= index %>'><div class='grid-space'><%= space_content %></div></a>
 	<% end %>
 </div>
 
 <style>
 
 	h1, h2 {
-		color: #fff;
+		color: #ccc;
+	}
+	
+	#header {
+		background: #fff;
+		width: 90%;
+		height: 50px;
+		padding: 0 5%;
+		line-height: 50px;
+	}
+	
+	#header h1 {
+		margin: 0;
+		float: left;
+	}
+	
+	#navigation {
+		float: right;
 	}
 	
 	.grid-space {
+		color: #fff;
+		line-height: 100%;
+		text-align: center;
+		font-size: 5em;
 		height: 100px;
 		width: 100px;
 		float: left;
@@ -21,6 +49,7 @@
 	}
 	
 	.grid-space:hover {
+		color: #ccc;
 		background-color: #fff;
 	}
 	
@@ -30,9 +59,13 @@
 	}
 	
 	body {
-		width: 500px;
-		margin: 0 auto;
+		font-family: Futura;
+		margin: 0;
 		background: url('/assets/bg.jpg');
+	}
+	
+	.center {
+		text-align: center;
 	}
 	
 </style>
