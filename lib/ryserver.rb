@@ -27,7 +27,7 @@ class RyServer
   end
 
   def new_game
-    game = save_game(Game.new('x', HumanPlayer, 'o', HumanPlayer, 3, UI))
+    game = save_game(Game.new('x', HumanPlayer, 'o', UltimateComputer, 3, UI))
     body = format(game, 'game')
     respond_with(body)
   end
@@ -45,12 +45,12 @@ class RyServer
     game = fetch_game
     game.board.set_move(game.current_player.marker, destination)
 
-    until game.current_player.human? || game.board.game_over?
+    until game.current_player.human? || game.rules.game_over?(game.board)
       game.set_current_player
-      game.current_player.get_move(game.board)
+      game.current_player.get_move(game)
     end
     
-    if game.board.game_over?
+    if game.rules.game_over?(game.board)
       game.instance_variable_set(:@flash, game.report_end_state)
     else
       game.set_current_player
