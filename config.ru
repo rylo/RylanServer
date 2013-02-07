@@ -9,10 +9,10 @@ require 'template'
 require 'binding'
 require 'router'
 
-require '/Users/baku/Documents/Ruby/t3/lib/game'
-require '/Users/baku/Documents/Ruby/t3/lib/player'
-require '/Users/baku/Documents/Ruby/t3/lib/board'
-require '/Users/baku/Documents/Ruby/t3/lib/console'
+require '/Users/rylan/Documents/Exercises/Ruby/t3-ruby-v2/lib/game'
+require '/Users/rylan/Documents/Exercises/Ruby/t3-ruby-v2/lib/player'
+require '/Users/rylan/Documents/Exercises/Ruby/t3-ruby-v2/lib/board'
+require '/Users/rylan/Documents/Exercises/Ruby/t3-ruby-v2/lib/console'
 
 
 builder = Rack::Builder.new do  
